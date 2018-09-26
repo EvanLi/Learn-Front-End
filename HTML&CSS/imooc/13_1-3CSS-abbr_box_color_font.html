@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>第13章 CSS代码缩写，占用更少的带宽</title>
+    <style type="text/css">
+    .poetry,#title{
+        /*width:300px;*/
+        /*height:100px;*/
+        padding:13px;
+        border: 1px solid red;
+        margin:10px 20px;
+    }
+    .para{
+        padding:13px;
+        border: 1px solid blue;
+        margin:10px 20px;
+        color: #369;
+        font:16px/1.5em  "宋体",sans-serif;
+        text-indent: 2em;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="divnone">
+        <!-- 用来写注释内容，加div便于折叠 -->
+        <!--
+        CSS代码缩写，占用更少的带宽
+		13-1盒模型代码简写
+		还记得在讲盒模型时外边距(margin)、内边距(padding)和边框(border)设置上下左右四个方向的边距是按照顺时针方向设置的：上右下左。具体应用在margin和padding的例子如下：
+		margin:10px 15px 12px 14px;/*上设置为10px、右设置为15px、下设置为12px、左设置为14px*/
+		通常有下面三种缩写方法:
+		1、如果top、right、bottom、left的值相同，如下面代码：
+		margin:10px 10px 10px 10px;
+		可缩写为：
+		margin:10px;
+		2、如果top和bottom值相同、left和 right的值相同，如下面代码：
+		margin:10px 20px 10px 20px;
+		可缩写为：
+		margin:10px 20px;
+		3、如果left和right的值相同，如下面代码：
+		margin:10px 20px 30px 20px;
+		可缩写为：
+		margin:10px 20px 30px;
+		注意：padding、border的缩写方法和margin是一致的。
+		13-2颜色值缩写
+		关于颜色的css样式也是可以缩写的，当你设置的颜色是16进制的色彩值时，如果每两位的值相同，可以缩写一半。
+		例子1：
+		p{color:#000000;}
+		可以缩写为：
+		p{color: #000;}
+		例子2：
+		p{color: #336699;}
+		可以缩写为：
+		p{color: #369;}
+		13-3字体缩写
+		网页中的字体css样式代码也有他自己的缩写方式，下面是给网页设置字体的代码：
+
+		body{
+		    font-style:italic;
+		    font-variant:small-caps;
+		    font-weight:bold;
+		    font-size:12px;
+		    line-height:1.5em;
+		    font-family:"宋体",sans-serif;
+		}
+		这么多行的代码其实可以缩写为一句：
+		body{
+		    font:italic  small-caps  bold  12px/1.5em  "宋体",sans-serif;
+		}
+		注意：
+		1、使用这一简写方式你至少要指定 font-size 和 font-family 属性，其他的属性(如 font-weight、font-style、font-variant、line-height)如未指定将自动使用默认值。
+		2、在缩写时 font-size 与 line-height 中间要加入“/”斜扛。
+		一般情况下因为对于中文网站，英文还是比较少的，所以下面缩写代码比较常用：
+		body{
+		    font:12px/1.5em  "宋体",sans-serif;
+		}
+		只是有字号、行间距、中文字体、英文字体设置。
+         -->
+    </div>
+    <br>
+	<div class="poetry" id="chb">
+		<div id="title">
+			<h1><a href="https://so.gushiwen.org/view_71156.aspx">出师表 / 前出师表</a></h1>
+			<div id="author">诸葛亮</div>
+		</div>
+		<div id="article">
+			<div class="para">
+				<p>
+					臣亮言：先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。
+				</p>
+				<p>
+					宫中府中，俱为一体；陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理；不宜偏私，使内外异法也。
+				</p>
+				<p>
+					侍中、侍郎郭攸之、费祎、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗陛下：愚以为宫中之事，事无大小，悉以咨之，然后施行，必能裨补阙漏，有所广益。
+				</p>
+				<p>
+					将军向宠，性行淑均，晓畅军事，试用于昔日，先帝称之曰“能”，是以众议举宠为督：愚以为营中之事，悉以咨之，必能使行阵和睦，优劣得所。
+				</p>
+				<p>
+					亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣论此事，未尝不叹息痛恨于桓、灵也。侍中、尚书、长史、参军，此悉贞良死节之臣，愿陛下亲之、信之，则汉室之隆，可计日而待也。
+				</p>
+				<p>
+					臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉命于危难之间：尔来二十有一年矣。
+				</p>
+				<p>
+					先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙夜忧叹，恐托付不效，以伤先帝之明；故五月渡泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸凶，兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则攸之、祎、允之任也。
+				</p>
+				<p>
+					愿陛下托臣以讨贼兴复之效，不效，则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、祎、允等之慢，以彰其咎；陛下亦宜自谋，以咨诹善道，察纳雅言，深追先帝遗诏。臣不胜受恩感激。
+				</p>
+				<p>
+					今当远离，临表涕零，不知所言。
+				</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
