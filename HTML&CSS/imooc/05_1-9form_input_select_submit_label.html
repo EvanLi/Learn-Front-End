@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>第5章 与浏览者交互，表单标签</title>
+</head>
+
+<body>
+    <!-- 5-1使用表单标签，与用户交互 -->
+    <!-- 网站怎样与用户进行交互？答案是使用HTML表单(form)。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。 -->
+    <!-- <form   method="传送方式"   action="服务器文件"> -->
+    <!-- 	1.<form> ：<form>标签是成对出现的，以<form>开始，以</form>结束。
+	2.action ：浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。
+	3.method ： 数据传送的方式（get/post）。 -->
+    <form method="post" action="save.php">
+        <label for="username">用户名：</label>
+        <input type="text" name="username" id="username" value="" />
+        <br />
+        <label for="pass">密码：</label>
+        <!-- for是label标签的一个属性，for 属性规定 label 与哪个表单元素绑定。 -->
+        <input type="password" name="pass" id="pass" value="" />
+        <br />
+        <input type="submit" value="确定" name="submit">
+        <input type="reset" value="重置" name="reset">
+    </form>
+    <br />
+    <!-- 5-2文本输入框、密码输入框 -->
+    <!-- <form><input type="text/password" name="名称" value="文本" /></form> -->
+    <!-- 	1、type：
+	   当type="text"时，输入框为文本输入框;
+	   当type="password"时, 输入框为密码输入框。
+		2、name：为文本框命名，以备后台程序ASP 、PHP使用。
+		3、value：为文本输入框设置默认值。(一般起到提示作用) -->
+    <form method="post" action="save.php">
+        账户:
+        <input type="text" name="myName" />
+        <br> 密码:
+        <input type="password" name="pass" />
+    </form>
+    <!-- 5-3文本域，支持多行文本输入 -->
+    <!-- <textarea  rows="行数" cols="列数">文本</textarea> -->
+    <!-- 注意这两个属性可用css样式的width和height来代替：col用width、row用height来代替。（这两个css样式在以后的章节会讲解） -->
+    <form method="post" action="save.php">
+        <label>联系我们</label>
+        <textarea cols="50" rows="10">在这里输入内容...</textarea>
+    </form>
+    <!-- 使用单选框、复选框，让用户选择 -->
+    <!-- <input type="radio/checkbox" value="值" ame="名称" checked="checked"/> -->
+    <!-- 1、type: -->
+    <!--    当 type="radio" 时，控件为单选框 -->
+    <!--    当 type="checkbox" 时，控件为复选框 -->
+    <!-- 2、value：提交数据到服务器的值（后台程序PHP使用 -->
+    <!-- 3、name：为控件命名，以备后台程序 ASP、PHP 使用 -->
+    <!-- 4、checked：当设置 checked="checked" 时，该选项被默认选中 -->
+    <!-- 注意:同一组的单选按钮，name 取值一定要一致，比如上面例子为同一个名称“radioLove”，这样同一组的单选按钮才可以起到单选的作用。 -->
+    <form action="save.php" method="post">
+        <label>性别:</label>
+        <br />
+        <label>男</label>
+        <input type="radio" value="1" name="gender">
+        <label>女</label>
+        <input type="radio" value="2" name="gender">
+    </form>
+    <form name="iForm" method="post" action="save.php">
+        你是否喜欢旅游？
+        <br />
+        <input type="radio" name="radioLove" value="喜欢" checked="checked">喜欢
+        <input type="radio" name="radioLove" value="不喜欢">不喜欢
+        <input type="radio" name="radioLove" value="无所谓">无所谓
+        <br />
+        <br /> 你对哪些运动感兴趣?
+        <br />
+        <input type="checkbox" name="checkbox1" value="跑步">跑步
+        <input type="checkbox" name="checkbox2" value="打球" checked="checked">打球
+        <input type="checkbox" name="checkbox3" value="登山" checked="checked">登山
+        <input type="checkbox" name="checkbox3" value="健身">健身
+    </form>
+    <!-- 5-5使用下拉列表框，节省空间 -->
+    <!-- <select><option value="向服务器提交值">显示的值</option></select> -->
+    <!-- 设置selected="selected"属性，则该选项就被默认选中。 -->
+    <form action="save.php" method="post">
+        <label>爱好:</label>
+        <select>
+            <option value="看书">看书</option>
+            <option value="旅游">旅游</option>
+            <option value="运动" selected="selected">运动</option>
+            <!-- 默认勾选 -->
+            <option value="购物">购物</option>
+        </select>
+    </form>
+    <!-- 5-6使用下拉列表框进行多选 -->
+    <!-- 在<select>标签中设置multiple="multiple"属性，就可以实现多选功能，在 windows 操作系统下，进行多选时按下Ctrl键同时进行单击（在 Mac下使用 Command +单击），可以选择多个选项。如下代码： -->
+    <form action="save.php" method="post">
+        <label>爱好:</label>
+        <select multiple="multiple">
+            <option value="看书">看书</option>
+            <option value="旅游">旅游</option>
+            <option value="运动">运动</option>
+            <option value="购物">购物</option>
+        </select>
+    </form>
+    <!-- 5-7使用提交按钮，提交数据 -->
+    <!-- 在表单中有两种按钮可以使用，分别为：提交按钮、重置。这一小节讲解提交按钮：当用户需要提交表单信息到服务器时，需要用到提交按钮。 -->
+    <!-- <input   type="submit"   value="提交"> -->
+    <form method="post" action="save.php">
+        <label for="myName">姓名：</label>
+        <input type="text" value=" " name="myName " />
+        <input type="submit" value="提交" name="submitBtn" />
+    </form>
+    <!-- 5-8使用重置按钮，重置表单信息 -->
+    <!-- <input type="reset" value="重置"> -->
+    <!-- type：只有当type值设置为reset时，按钮才有重置作用 -->
+    <!-- value：按钮上显示的文字 -->
+    <form action="save.php" method="post">
+        <label>爱好:</label>
+        <select>
+            <option value="看书">看书</option>
+            <option value="旅游" selected="selected">旅游</option>
+            <option value="运动">运动</option>
+            <option value="购物">购物</option>
+        </select>
+        <input type="submit" value="确定" />
+        <input type="reset" value="重置" />
+    </form>
+    <!-- 5-9form表单中的label标签 -->
+    <!-- label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。 -->
+    <form>
+        <label for="male">男</label>
+        <input type="radio" name="gender" id="male" />
+        <br />
+        <label for="female">女</label>
+        <input type="radio" name="gender" id="female" />
+        <br />
+        <label for="email">输入你的邮箱地址</label>
+        <input type="email" id="email" placeholder="Enter email">
+    </form>
+</body>
+
+</html>

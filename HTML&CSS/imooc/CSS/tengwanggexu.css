@@ -1,0 +1,92 @@
+/*html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td{
+	padding:0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color:#0F0F0F;
+}*/
+body{
+	background: rgb(225,222,200);
+}
+h1 {
+    /*text-indent: 2em;*/
+    font-size: 20px;
+    line-height: 22px;
+    height: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    /*text-align: left;*/
+}
+
+p {
+    font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+    /*若前面字体没有，则依次选择，有空格时加单引号或双引号，取决于  font-family 属性放在 HTML 的 style 属性中，则需要使用该属性本身未使用的那种引号：*/
+    /*详细见http://www.w3school.com.cn/css/css_font.asp*/
+    text-indent: 2em;
+    line-height: 1.5em;
+    /*text-align: left;*/
+}
+div{
+    /*text-align: left;*/
+}
+
+#fixed_header{
+    /*width:100%;*/
+    height:50px;
+    border:2px green solid;
+    position:fixed;
+    right: 2px;
+    left: 2px;
+    top: 0px;
+    background: rgba(91,95,71,0.9);
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+}
+#header1{
+	margin: 5px 15px 20px 60px;
+}
+.gushiwen {
+    width: 800px;
+    height: 30;
+    padding: 30px 10px 15px 10px;
+    /*border: 2px solid blue;*/
+    margin: 54px 15px 20px 60px;
+    background: #FFE4B5;
+}
+.title {
+    /*border-bottom: 1px solid red;*/
+    text-align: center;
+}
+.source {
+    font-family: Arial, "Microsoft YaHei", "黑体", "宋体", sans-serif;
+    color: gray;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    /*text-decoration: underline;*/
+    text-indent: 0em;
+    line-height: 1.5em;
+    border-bottom: 2px dashed blue;
+}
+.paragraph {
+    width: 750px;
+    text-align: left;
+    padding: 10px 20px;
+    border: 2px  blue;
+    margin: 20px auto;
+    text-indent: 2em;
+    font-family: "Microsoft YaHei";
+}
+
+.poetry {
+    width: 750px;
+    text-align: center;
+    padding: 10px 20px;
+    /*border: 2px solid blue;*/
+    margin: 20px auto;
+    text-indent: 0em;
+}

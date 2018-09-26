@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>第7章 CSS样式基本知识</title>
+	<link href="./CSS/7_1-4style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		span{
+			color:blue;
+		}
+	</style>
+
+</head>
+<body>
+	<!-- 7-1CSS样式可以写在哪些地方呢？从CSS 样式代码插入的形式来看基本可以分为以下3种：内联式、嵌入式和外部式三种。这一小节先来讲解内联式。 -->
+	<!-- 内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码： 注意要写在元素的开始标签里 -->
+	<!-- 并且css样式代码要写在style=""双引号中，如果有多条css样式代码设置可以写在一起，中间用分号隔开。如下代码： -->
+	<p style="color:red">这里文字是红色。</p>
+	<p style="color:red;font-size:12px">这里文字是红色。</p>
+	<!-- 7-2嵌入式css样式，写在当前的文件中 -->
+	<!-- 嵌入式css样式，就是可以把css样式代码写在<style type="text/css"></style>标签之间。如下面代码实现把三个<span>标签中的文字设置为蓝色： -->
+	<p>
+		慕课网，<span style="color: pink">超酷的互联网</span>、IT技术免费学习平台，创新的网络一站式学习、实践体验；<span>服务及时贴心</span>，内容专业、<span>有趣易学</span>。专注服务互联网工程师快速成为技术高手！
+	</p>
+	<!-- 7-3外部式css样式，写在单独的一个文件中 -->
+	<!-- 外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以“.css”为扩展名，在<head>内（不是在<style>标签内）使用<link>标签将css样式文件链接到HTML文件内，如下面代码： -->
+	<!-- <link href="base.css" rel="stylesheet" type="text/css" /> -->
+	<!-- 1、css样式文件名称以有意义的英文字母命名，如 main.css。 -->
+	<!-- 2、rel="stylesheet" type="text/css" 是固定写法不可修改。 -->
+	<!-- 3、<link>标签位置一般写在<head>标签之内。 -->
+		<!-- 见./CSS/7_1-4style.css -->
+	<!-- 7-4三种方法的优先级 -->
+	<!-- 这三种样式是有优先级的，记住他们的优先级：内联式 > 嵌入式 > 外部式 -->
+	<!-- 但是嵌入式>外部式有一个前提：嵌入式css样式的位置一定在外部式的后面。如右代码编辑器就是这样，<link href="style.css" ...>代码在<style type="text/css">...</style>代码的前面（实际开发中也是这么写的）。若把它们调换顺序，则优先级是 内联式 > 外部式 > 嵌入式。 -->
+	<!-- 其实总结来说，就是--就近原则（离被设置元素越近优先级别越高）。 -->
+</body>
+</html>

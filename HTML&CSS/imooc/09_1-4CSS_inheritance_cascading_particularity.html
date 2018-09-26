@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>第9章 CSS的继承、层叠和特殊性9_1-4CSS_inheritance_cascading_particularity</title>
+    <style type="text/css">
+    p {
+        color: red;
+    }
+
+    p {
+        border: 1px solid red;
+    }
+
+    p {
+        color: red;
+    }
+
+    .first {
+        color: green;
+    }
+    /*因为权值高显示为绿色*/
+
+    span {
+        color: pink;
+    }
+    /*设置为粉色*/
+
+    p span {
+        color: purple;
+    }
+    .class3{color:red!important;}
+    .class3{color:green;}
+    </style>
+</head>
+
+<body>
+    <!-- 9-1继承 CSS的某些样式是具有继承性的，那么什么是继承呢？继承是一种规则，它允许样式不仅应用于某个特定html标签元素，而且应用于其后代。比如下面代码：如某种颜色应用于p标签，这个颜色设置不仅应用p标签，还应用于p标签中的所有子元素文本，这里子元素为span标签。 -->
+    <!-- 注意有一些css样式是不具有继承性的。如border:1px solid red; -->
+    <h1>勇气</h1>
+    <p class="first">三年级时，我还是一个<span>胆小如鼠</span>的小女孩，上课从来不敢回答老师提出的问题，生怕回答错了老师会批评我。就一直没有这个勇气来回答老师提出的问题。学校举办的活动我也没勇气参加。</p>
+    <p id="second">到了三年级下学期时，我们班上了一节公开课，老师提出了一个很<span>简单</span>的问题，班里很多同学都举手了，甚至成绩比我差很多的，也举手了，还说着："我来，我来。"我环顾了四周，就我没有举手。</p>
+    <!-- 9-2特殊性 浏览器是根据权值来判断使用哪种css样式的，权值高的就使用哪种css样式。-->
+    <!-- 下面是权值的规则：标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100。例如下面的代码： -->
+    <!-- p{color:red;} /*权值为1*/ -->
+    <!-- p span{color:green;} /*权值为1+1=2*/ -->
+    <!-- .warning{color:white;} /*权值为10*/ -->
+    <!-- p span.warning{color:purple;} /*权值为1+1+10=12*/ -->
+    <!-- #footer .note p{color:yellow;} /*权值为100+10+1=111*/ -->
+    <!-- 注意：还有一个权值比较特殊--继承也有权值但很低，有的文献提出它只有0.1，所以可以理解为继承的权值最低。 -->
+    <!-- 9-3层叠：在html文件中对同一个元素可以有多个css样式存在，当样式权重相同时，会根据这些css样式的前后顺序来决定，处于最后面的css样式会被应用。 -->
+    <!-- 9-4重要性 有些特殊的情况需要为某些样式设置具有最高权值，这时候我们可以使用!important来解决。-->
+	<p class="class3">三年级时，我还是一个<span>胆小如鼠</span>的小女孩。</p>
+</body>
+
+</html>
